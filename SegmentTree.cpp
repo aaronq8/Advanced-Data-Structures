@@ -1,4 +1,5 @@
 //Efiicient Segment Tree with only 2*n space
+#include <bits/stdc++.h>
 #define lli long long int
 const int Max_N = 100000;
 
