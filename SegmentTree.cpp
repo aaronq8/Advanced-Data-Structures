@@ -1,4 +1,7 @@
+//Efiicient Segment Tree with only 2*n space
+#define lli long long int
 const int Max_N = 100000;
+
 class seg_tree {
 public:
 	vector<lli> tree;
@@ -12,7 +15,10 @@ public:
 		}
 		//for parents
 		for (int i = n - 1; i > 0; --i) {
-			tree[i] = tree[i << 1] + tree[i << 1 | 1];
+			lli leftChild = tree[i<<1];// i<<1 == 2*i
+			lli rightChild = tree[i<<1 | 1]; //i<<1|1 == 2*i+1
+			tree[i] = leftChild + rightChild;
+			
 		}
 	}
 	void updateTreeNode(int p, int value){
